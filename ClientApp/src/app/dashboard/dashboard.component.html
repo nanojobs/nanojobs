@@ -1,0 +1,89 @@
+<div fxFill fxLayout="column">
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="mainSVC.menu.toggle()" aria-label="Main menu button">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Dashboard</span>
+        <div fxFlex></div>
+        <button *ngIf="!mainSVC.privateKey" mat-icon-button (click)="mainSVC.importMasterPrivateKey()">
+            <mat-icon>vpn_key</mat-icon>
+        </button>
+        <button mat-icon-button (click)="mainSVC.CurrentScreen='current_job'">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div fxflex fxLayout="column" fxLayoutAlign="start stretch">
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" style="margin-bottom: 10px;">
+            <dashsimple fxFlex="25" fxFlex.lt-md="50" class="padding" [simplevalue]="data.total"
+                simpletitle="Total Completions" simpleicon="assignment" simplecolor="primary"></dashsimple>
+
+            <dashsimple fxFlex="25" fxFlex.lt-md="50" class="padding" [simplevalue]="data.validCompletions.length"
+                simpletitle="VALID Completions" simpleicon="assignment_turned_in" simplecolor="primary"></dashsimple>
+
+            <dashsimple *ngFor="let c of data.countCompletions" fxFlex="25" fxFlex.lt-md="50" class="padding"
+                [simplevalue]="c.count" [simpletitle]="'\''+c.result+'\' Completions'" simpleicon="find_in_page"
+                simplecolor="primary"></dashsimple>
+
+            <dashsimple fxFlex="25" fxFlex.lt-md="50" class="padding" [simplevalue]="getEstimatedPayout()"
+                simpletitle="Estimated payout" simpleicon="account_balance_wallet" simplecolor="primary"></dashsimple>
+
+        </div>
+
+        <div fxFlex *ngIf="mainSVC.privateKey!=null" class="padding">
+            <div fxFlex="100" [class.mat-elevation-z8]="true" fxLayout="column" fxLayoutAlign="start stretch"
+                style="padding:5px;background-color: rgba(0,0,150,0.16);border-radius: 5px;">
+                <div fxLayout="row" fxLayoutAlign="start center"
+                    style="text-align: start;height:38px;padding-left: 5px;">
+                    <span><b>Master</b></span>
+                    <div fxFlex></div>
+                    <button mat-icon-button (click)="console.downloadData()">
+                        <mat-icon>
+                            get_app
+                        </mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="console.reload()">
+                        <mat-icon>
+                            refresh
+                        </mat-icon>
+                    </button>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center"
+                    style="background-color: white;border-radius: 5px;overflow: auto;">
+                    <app-masterconsole fxFlex="100" #console></app-masterconsole>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <button mat-icon-button (click)="createNewKeys()">
+                        <mat-icon>
+                            vpn_key
+                        </mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="createNewDb()">
+                        <mat-icon>
+                            settings_input_hdmi
+                        </mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="outputTo" style="height: 50vh;width:90vw;top:25vh;left:5vw;position: fixed;background-color: grey;padding:5px;border:1px solid grey; border-radius:5px">
+    <div fxFill fxLayout="column" fxLayoutAlign="center stretch">
+        <textarea [ngModel]="outputTo" fxFlex ></textarea>
+        <button mat-raised-button (click)="outputTo=null">
+            Close
+        </button>
+    </div>
+</div>
+
+<div *ngIf="loading" style="height: 50vh;width:90vw;top:25vh;left:5vw;position: fixed;background-color: grey;padding:5px;border:1px solid grey; border-radius:5px">
+    <div fxFill fxLayout="column" fxLayoutAlign="center center">
+        <div>
+            <mat-spinner></mat-spinner>
+        </div>
+        <div>
+            {{loading}}
+        </div>
+    </div>
+</div>
