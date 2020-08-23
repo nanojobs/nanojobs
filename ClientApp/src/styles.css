@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.debug {
+    background-color: pink;
+}
+.dbg {
+    background-color: lightgreen;
+}
+
+.dbg1 {
+    background-color: red;
+}
+
+.dbg2 {
+    background-color: blue;
+}
+
+.dbg3 {
+    background-color: purple;
+}
