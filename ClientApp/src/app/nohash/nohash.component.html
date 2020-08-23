@@ -1,0 +1,26 @@
+<div fxFill fxLayout="column" fxLayoutAlign="center stretch"
+    style="overflow: auto;padding:15px;background-color: white;">
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <img #nohashlogo />
+        <h1>nanojobs.eth</h1>
+        <h2>Let's start a new nano job?</h2>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="start stretch">
+        <div fxFlex>
+            <mat-form-field fxFlex appearance="outline">
+                <mat-label>IPFS Hash </mat-label>
+                <input matInput [(ngModel)]="currentHash" (keyup.enter)="enterHash()" >
+                <button matSuffix mat-icon-button color="primary" (click)="enterHash()" >
+                    <mat-icon>
+                        send
+                    </mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        
+    </div>
+    
+
+    <h3>If you don't have a job directory ipfs hash, ask pool leader for a new one.</h3>
+</div>

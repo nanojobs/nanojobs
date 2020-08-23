@@ -1,0 +1,103 @@
+<div fxFill fxLayout="column">
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="mainSVC.menu.toggle()" aria-label="Main menu button">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Verify Classification Tool</span>
+        <div fxFlex></div>
+
+        <button *ngIf="!currentJob" mat-icon-button (click)="mainSVC.CurrentScreen='current_job'">
+            <mat-icon>close</mat-icon>
+        </button>
+        <button *ngIf="currentJob" mat-icon-button (click)="currentJob=null">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div [fxShow]="currentJob" fxflex fxLayout="row" fxLayoutAlign="end start" style="padding:10px">
+        <mat-slide-toggle #viewbymail>View by Email</mat-slide-toggle>
+    </div>
+    <div *ngIf="!currentJob" fxflex fxLayout="column" fxLayoutAlign="start stretch">
+        <div *ngFor="let job of jobs" style="padding:10px">
+            <div class="mat-elevation-z4" style="background-color: white;">
+                <div fxLayout="row" fxLayoutAlign="start start" style="overflow: hidden;padding:10px;padding-bottom: 0;">
+                    <mat-form-field fxFlex >
+                        <mat-label>JOB HASH</mat-label>
+                        <input matInput [value]="job.job_hash" readonly>
+                    </mat-form-field>
+                </div>
+                <div *ngIf="job?.job_hash" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 10px;padding-top: 0;">
+                    <div *ngFor="let jobwallet of getJobWallets(job.job_hash)"
+                        style="background-color: lightgray; border-radius: 10px;margin:5px;padding-left:5px;overflow: hidden;"
+                        class="mat-elevation-z4">
+                        <div fxLayout="column">
+                            <div>
+                                {{jobwallet.email}}:{{jobwallet.wallet}}
+                            </div>
+                            <div>
+                                <small>
+                                    Total: {{jobwallet.total}} / Valid: {{jobwallet.valid}}
+                                </small>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="end center" style="overflow: hidden;padding:10px">
+                    <button mat-raised-button color="primary" (click)="openJob(job.job_hash)">
+                        View <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div *ngIf="currentJob" fxflex fxLayout="column" fxLayoutAlign="start stretch">
+        <div *ngIf="imagesData" fxLayout="row wrap" fxLayoutAlign="start start" style="margin-bottom: 10px;">
+            <!--
+                COMECA AQUI
+            -->
+            <div *ngFor="let img of imagesData.images_hashs" fxLayout="column" fxFlex.xl="10" fxFlex.xs="50" fxFlex.sm="33" fxFlex.md="25" fxFlex.lg="20" style="padding:5px;" >
+                <div style="border: 1px solid lightgray;border-radius: 5px;overflow: hidden;" [ngStyle]="getCardStyleFrom(imagesData.images_dic[img])">
+                    <div style="height: 70px;" fxLayoutAlign="center center">
+                        <img [src]="'https://cloudflare-ipfs.com/ipfs/'+img" style="width:100%;max-height: 70px;" />
+                    </div>
+                    <div style="padding:2px">
+                        <div *ngFor="let wallet of imagesData.images_dic[img]" >
+                            <div fxLayout="row" fxLayoutAlign="start start" >
+                                <div fxFlex="50">
+                                    {{wallet.simple_result}}
+                                </div>
+                                <div fxFlex="50">
+                                    {{viewbymail?.checked ? wallet.email : wallet.wallet}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div style="z-index:5; position : fixed;right:15px;bottom:15px;">
+
+    <button *ngIf="!currentJob" mat-fab color="primary" (click)="addNewJobCompletions()">
+        <mat-icon>add_task</mat-icon>
+    </button>
+
+</div>
+
+<div *ngIf="loading"
+    style="height: 50vh;width:90vw;top:25vh;left:5vw;position: fixed;background-color: grey;padding:5px;border:1px solid grey; border-radius:5px">
+    <div fxFill fxLayout="column" fxLayoutAlign="center center">
+        <div>
+            <mat-spinner></mat-spinner>
+        </div>
+        <div>
+            {{loading}}
+        </div>
+    </div>
+</div>

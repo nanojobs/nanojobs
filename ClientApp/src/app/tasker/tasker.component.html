@@ -1,0 +1,41 @@
+<div fxFill fxLayout="column">
+    <mat-toolbar *ngIf="!error" color="primary">
+        <button mat-icon-button (click)="mainSVC.menu.toggle()" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span >{{mainSVC.AppTitle}}</span>
+        <div fxFlex>
+        </div>
+        <div *ngIf="loading && showed && mainSVC.loadingDirectory" fxLayout="row" fxLayoutAlign="start center">
+            {{toploading}}
+            <mat-spinner color='accent' diameter="24" ></mat-spinner>
+            </div>
+        <button mat-icon-button (click)="mainSVC.CurrentScreen='guide'">
+            <mat-icon>help</mat-icon>
+        </button>
+    </mat-toolbar>
+    <div fxFlex fxLayout="row" style="overflow: scroll;">
+        <div *ngIf="!error" id="label-studio" style="margin-top:10px;width:100%;"></div>
+
+        <div *ngIf="error" fxFill fxLayout="column" fxLayoutAlign="center center">
+            <h1 style="text-align: center;">
+                {{error}}
+            </h1>
+            <button mat-raised-button color="primary" (click)="mainSVC.CurrentScreen='nohash'">
+                Enter IPFS directory hash
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="loading && !showed"
+    style="position:fixed;top:100px;left:0;z-index:99999;width: 100vw;height: 60vh; margin: 0; opacity: 0.5;"
+    fxLayout="column" fxLayoutAlign="center center">
+    <div>
+        <mat-spinner></mat-spinner>
+    </div>
+    <div>
+        {{loading}}
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<div fxFill fxLayout="column">
+    <mat-toolbar color="primary">
+
+        <span>{{mainSVC.AppTitle}}</span>
+        <div fxFlex></div>
+    </mat-toolbar>
+    <div fxFlex fxLayout="column" fxLayoutAlign="start stretch" style="overflow: auto;">
+
+        <div fxFill fxLayout="column" fxLayoutAlign="center stretch"
+            style="overflow: auto;padding:15px;background-color: white;">
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <img
+                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCACJAMgDAREAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAQFAwYHAQgC/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAIBAwQF/9oADAMBAAIQAxAAAAH6pAAAAAPDj/u5dg8PX0AAAAAAAAAAGjennw36HLrvg7dO8tgAAAAAAAAARNzgv1PPrPREb9T/ACO8+dAAAAAAAAAHKPbx0b086S9pb3p3jvu/z+oAAAAAAAAFB1ng30uFNbWa3Bqzx9Q/I7bVyoAAAAAAAAcy9fPhX0Of41VlXrJj6L+d1695LAAAAAAAAGv9Z1/pnLvXHN/RO2cK635L2flu18qAAAAAAAAA419DhKnbblekeiYNZ9FfM7AAAAAAAAACFWcJ+l59X6o6vqL5HaxnQAAAAAAAAANV7RwD6fHuHze+88KAAAAAAAAAAA1LtO28aAAAAAAAAAAAAAAAAAAAAH5B+gAAAAAAAAADwEOsE2dAAAAAAAAEGswatY2j6T4WE7XVljOzZ2FWRty2isO5G1Pnai5l5sydw7n6x+mxdyFeTJ3Ea72mdKyis+AIu5i1ec603vE+dlSh1mwc6qbzBqBWbjwul6TnzZcqHrOx8b1ntE2dj6mytYqJWACDWXfOtc6zNnbGFX0y551W1mPcFtFa91mPubDyqsvLvnVL0nwzZtB0ndOF4mG+npj3M+bArNU7TvXnvCZgaL6I2vjU+d17rNTebr57xbmfNwbjH//EACoQAAEEAQMCBgIDAQAAAAAAAAQBAgMFAAY0QBEyEBITFTM1FDEhMENQ/9oACAEBAAEFAv61XohGqVhvUXzJxtT2XoQWWaKufyheKUSwMcol5hFlgJkleWCZHYCcTU9l68+WXhoq5/FJ4d1Y+3ByksZkp73Ya5fMwtyZEQ1y6cuEuK7harpDj3PY6J+G+Ecb5n6L05YVcnCtHECNe2s1Qy40qXVYblFow25xHU2i4qOQs+Ph31X7cTW6mlGyWHTzX3GtJzM0tRrbmcQwRho5gjwiLLK4CWyLrwY60Ti39V7gPYp/OlaL2kTjv07A+4/5TnIxrXI9vFVeiIvVDdkFsuESbELkNlDLJlkbHDDWnRywm7KE+IcYYyIvwJMiESOzhfJj5mxujOgmnx9pA14xcRbcjlZLkkjYo0VHJIXFE9LYfqQZELkFhCRJXWYaYVY1xcNWQpQBuyC2Ruyqh0HANT0jcEsREnIs64mKoIUgG6idOsUTII7gj0AobSuHiIsBVLysyz+tH274Emv3sbIykH6NuU8oQ07axxFnDEjevlN2QWyN2QWysvkyKZKyaezHhSJXOjP3GWA7iRoLOCVsdg0gjIZmgmXBbZAh9un3WVO3uvqrTY6d/WS/HF8T+xnZJ+8P2mne/H93hqLvB2mX31tB9O3t/wB8h7Zvi//EACARAAEEAwEAAwEAAAAAAAAAAAEAAhARIDFAIRIwQWD/2gAIAQMBAT8B+z5e9DjDTzaW+hx/MGnkJrIG+NwvJorjK8ci2oDbXjUORwpBy82i5NF8u0RUD3ncLgCuivb/AJi1cEoGLwubi87i0CFYQwE2FYQRgqwrEBHUfsBFaV5GNK4MFWrjSMfsBHSKb9LcXIQdJusv/8QAJxEAAgEEAgEDBAMAAAAAAAAAAQIAAxESMRBAISAiMhMjMEFCYGH/2gAIAQIBAT8B/J9H2f72KKXOUWV0sch1gMjaAYi0WMuQsYwxNj1aKWGXC8V0uMh1KaZmWlvRVTBunRqKvgzfo1K1VX8DppY+0z30dRKyvw9ZUlqlePivtXqUnyFjHog6n3fhEoAeWlapgLDqqcTcRWyFxFjMEFzGYsbnrUnxMWVqmZ8a7H1Thj/RF2I2z0wpMKEeeEUk3jqQbxdiFSSYVI3wFJ1MDxaYkC/GBhBG+LWm+LEzAwKTqFSIyNoCBXU3tHFmtF2I2zF2I5u0XyCOCrWsIEceQI4s0pm14TeILmFHPkiBWsQeH/UT5CHcvanxUP6lPdoRn7hAhPC7EbZi7EbZi/vgjMXECE8Lo8KbGFCJjYeeCMhcSmPIJh3P4cPuU/kIu5V/Au5V9NKNvin8pV+foPH/xAA8EAACAQEEBQkDCwUAAAAAAAABAgMABBESMRATISJRMkBBQmFxc4GxFCNyJDNSU2J0kaGy0eEFMFDBwv/aAAgBAQAGPwL+3ecqjlv+Rm+Mjs41eNo5v7Mh35OV2Co/OvYpT72Ebnav8c2eZ+Sop5n5TGo/Oo7REd9Df31HaIjuOL+a+zIdyPldraI/PR7FKfdSncv6G/nmhYfOtsSjia9vzrc3RSG838a3t6gVa5qVyffpuyDt48z19mkxqou1OR8qKupVhmDoTQEjUu5yVReTRtNqk1aut2ozPnzP2mz7wX5yI5Ecawyrq7T0HJv5ouBr7P8AWJ0d4pKWRh7NZvrHGfcKKRLrbXdt6XPeeivbbX7sP81CuSrx7+aayPZC/J+yeFBLR76Pj1hQ/qTrDeOjt+HjRjsgNmh+l1z+1a2YX2aM3tf1jw5q8MnJb8qeGTlL+dR+dR2eIbzdPAcajs8Q3VH49vNsaD38eXaOFRjp21rJR8ql5X2Rw5wltOS7dX9rj/iyx2AbTQYbQdo5tedgq8bRU/ht6VB4a+nMwJG3myUC8nyoR70UhyWVSt+iaNseIockJFQxDHiwDNCBlxqfw29Ks6HEz6td2NSxyo6ttq5qRcR5aBrGuJyUbSfKghxxM2QlQrfoRWNxc3LRiR8bjPCNg89BRccxXPVIWuomJr7sx0jQ2E34ThPfTOxuVReTQIyNMruFKrjN/Chixopyd4yF/GhrG2tkoF5PlWrGJZM8EilTT2iWdRPKdt/VHQKaN7Qm3I8DxqGRtrEbTxqfw29Kg8NfSp/Db0qEdZlDMeJqxzDYzPqj2gg/tonnnmUTFioB6qimjknQqaRmbGReuL6V3TVjjViuKa68cLjfQRFCqMgK5erxsEx/Rv6aWOOeNUXIVZ5rPMrS4wjBesp0Wv7w1Wrwm9Kj+EUC20JADd24jRVhiU7CDUsjnG4YxKT0KtGbrwkOpo2ac6tLyYpDkRwq6NhPMeTHGbyaGLY3TU/ht6VB4a+lT+G3pUHhr6VYvHH6TokhmOCF2LxyHLbmK2OJXPJjjN5NKXXC920Doqw+L/ydBCbJFIdL+IrecQyDlRyG4ihHANag5cg5I/fRPFKcCytrI2OR4ip4YGEkmAlsPVXpvqP4RT/d1/UdEniyfqNWn4akqTQ3dSd1N3UvdUfxaJe6pNEff/rTHUfdokqTuNCj8Og959aav//EACkQAQABAgQGAgIDAQAAAAAAAAERACExQVHwEEBhcYGhkbHB0SAw4VD/2gAIAQEAAT8h/rBkgXVpfP5Bnzm/a1GCCEiZ8vDW1KNt/wB1seKnpMhPx7YRyzixK76FMLMrtoVseKjcdmGY9y1TqIbUcx6jblYac9xst++Gx44TsGUl49sY5Q3pg3XXxTq1wmU0hA62K1rzcV8qdthrg1ASLmSNEC2w6/vkwoLSWeqz9eaeZ8DhHqcPzfjg53YQR0CiI6xuisD345PDNfRbRN4UXsKJIezk6eqtvV4Lj0fVfm/FX9u+OPu74VMD4XH1j09VgAOW1DVfXfk0khuUoArmGx0qCTh7l/NGnYS89x1rLuF9nv8Ah80zZNPd/u/7QAQWOUDiQxzWSUHEJjkMkrY8VIye+TOXQqPlGlxWa6vLZLife/SmYTgR8UGDQZeD9/8AOYHIZjC2+/f/AJbmw5HIpxYchmcsDIASrlQEghImdbpqrdNHJpsZ3dsL0vM5V7Jx4HdZWPBzCKL2PSZqEVumqkql0UEMQwoCY2mu7V+CTOYI9mLtYe7eIcnC1oOjFhfoaujzcPQcE8J3KiI96FXAtDELojc4Z7/0RiVMu7TBjTtSEjQaU4IExM9yoUnIS3kRRdpjV2YvUwYVwBqDjQDVXMl+momrAY5Q6lL3YNQMT5it01Vumit01UUL5gUNlDcIQ5ov2RwxqP2qgDvj5oOvwn5OtScH3Yh5FIAZGMYJ4mhHPArFM0XL0Ff4TRYEgKbxcTrS/Zh4bntTja3Vu2lW5mXhgHxejXhyBKZnxk6oD7oA7ZxxG/yWogg2lazdklYIgiI8YHVptwQEBkGt01Vumit01Vumji562JTUq5MzWifgfoBQ2mC6RaTXt+GgYoME0lRq1ZD/AD90DKdO7IObgGOdOJAuaye6chJBIBK0WIO9btp/Hion0eP9v9V6H6r3lesredHivpcN71cfX/hT2TSvVo9D7eG16q9ev//aAAwDAQACAAMAAAAQkkkkkgIkkkkkkkkkkkP0kkkkkkkkkk57skkkkkkkkkj/AB5JJJJJJJJIMdI5JJJJJJJJLgllJJJJJJJJIBUZ5JJJJJJJJAYYRJJJJJJJJJI+nJJJJJJJJJJGVJJJJJJJJJJJNJJJJJJJJJJJJJJJJJJJJIlJJJJJJJJJJACZJJJJJJJJBIWWJXCo7K5yMCCTzEuyYoYaq80STYpzM/JSYSNPsjCopEJYjD//xAAhEQEAAgMBAAICAwAAAAAAAAABABEQITFAIEEwUWCRwf/aAAgBAwEBPxD8n9HoqKISwrzKC2La2EGm4NlnluaYMUNPkqTsr4VPGuxOfDsXZ8dzZBgmCRcLO3yWrIppxI8li3yoCmIqYQWogUUealCVPRX+CDxhw8aDsA6wAVASo8ZQCCPMKHYB1i6gFoxSCPMXcWt4sJWKHYB1OhYqVcVlx4w4R4wUR0jgsVYqUsdkN0QK0R0QPQxsEcfadIclXPYftnN/qDwxBh4w4R4w4TowNqYghOjAs1AMLNGBsjHpCHJ/nHM7TjJ58nnzOMdsn3gjP//EACcRAQABAwQCAgICAwAAAAAAAAEAESExEEFRoUBxgcFhsTDwUJHh/9oACAECAQE/EP5Cpnt/zyLkwTdOPH9+M4DeGA2m6E+9FTMeLcGXTdpz0Z9eJYXG8E4gTMJSJWzLNs48MOj8wQVNDRQVW0Ip1pv4YflwyjVuOpaGzCWwuwRVsdQpkpl8TlglxteoLsr/AH88TfR6nJj14qhAAhujmSPe8azOGbmWPB5H9Xb/ABYVaESjR8bMxO1O14eJgG4/F9AA55IgXPJO1FAxV/GssSiJUv6a6CRTaNUFtBSrb20jtBoqisBQExAghOO/yaSEq4/3LW0JTCBYTtTtTtRWlye9KYdvuJ1ErQQKrx9xFVm01peJ1FYYm2fnT9BO0TJCwN36IKNSVUFjPyy7ibRty7y4NjmNK2nanananamPr9miBkMn3MkUOWNBaYnR+zQ6ziYIqcxda12NEG5SzFLSVmSOPt/Rpi9H60WOZGhkjlhmOYb6YZgaG+u+ZdMcwRzNtMoZn//EACgQAQACAQMDBAIDAQEAAAAAAAERIQAxQVEQYXFAgaHwILGRwdEwUP/aAAgBAQABPxD/AJnIKoQAarm4J7xoI8PJbAXzJSBsR49PUTPS9GPLE8HI6ZVSiNyQdykPLg+mmJowbegd1QPOSk2YaDQOwAHjpkcyALwOyRXZyG9gKOihbBXc9LqZqytCPBk8vA6K+k4uWBBHsAHhyfSWQW/UZceBfmDfCfIqMouzl5echYNpB5U0bV849ac7sGuumRwFdABpxTv/ALjG3kamWJ3I1NMqFAWsCocG+Jht6MPbYMQZUsJbS22wxw7G+/CWPn8G7Lm3gAVexiy8pVVkNlGwtabh9FP81gIPcFqmprMDC6nUFxxwV2HmGNNz5H+VPkT3GnRmEYch/GXzRal0wYUwCGDYhKYByLJMkpKQ0nssQumgJHowYBCEdHG5hau4y257PDgxWomry14274qAFOppkaWoz/pgSylwewUeyX4Ybwci7STrP8FbHAQAEAEAekqAiH/QhvKgYBLH8JL+NTplLS0JBfAC+9BaZbc4V++4JfjQ9MUDWQa6y99+6t3DoyQJc7IyNk1bOuHDv3VcPUAClXXpHgRTy7f+WGN3QgJV9sDmboSEie3pn/iTgBqrsYf8ScgdEdz0tCgOlJXHrBUd4jEH/USeC7DPR6kdUBEsHe63wZQdawTR8LvbpQnx9sZAhYO0xO2S2ALEdIgJ2Yh26WEKCHBH2Csl1q1zhkL2mek3tJhji0VavjDLGtMNQEeyZ6ELBN43EgTcmTB43qcYwnk6UqooSpqG0mmUtlRYSqC2AdMjJYTcSRy/MYUw7FoRM9rxIDTDHSmJ7xjuqEcQ1iq8xBvjIPi3LASHiYwKcM2KgqoAKbqziUpSpCamKSxwJi5tFmeyl7/hQoUBxkaZEqrvFDgA2wOZR0iU5ShxfPR0k4sppqouNXsyR1oLI7JFBsTRyRTMdB7KA+VwwLnYYcmzVPfCFsgQfd8sUyjEKE7JMPMYR8LLRy1a6ru5K2NiSkUtYOIeeowQsVZfS8cNvdcIrGjBROijtiPrhSohEx87lSoLxKJ5qcG2GTQMJ4kRuONPKGWi3S1IYkhMGhyWu0m3egAnGQpqYLBqSd/zoUKFAydCpKVNLE0TSOsmQEyjZDSETy0ZMEuLJYgTDU9VOzTvQzeykPnEh25KMSEnApMLwK2d0ZFYoaJZ26MumWeadQZIWUEZHxUFoQKkgNqNhz6Xj+GqV8/+zPt98/S/rp9byz7Hhn2nDn2HGfE9P5zPmv30+Z6v1u+fH9P0/wC8+5558L+vw+aPmc//2Q==" />
+                <h1>wallet</h1>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start stretch">
+                <div fxFlex>
+                    <mat-form-field fxFlex appearance="outline">
+                        <mat-icon matPrefix>account_balance_wallet</mat-icon>
+                        <mat-label>Ethereum address *</mat-label>
+                        <input matInput [(ngModel)]="currentAddress">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start stretch">
+                <div fxFlex>
+                    <mat-form-field fxFlex appearance="outline">
+                        <mat-icon matPrefix>email</mat-icon>
+                        <mat-label>Email address (optional)</mat-label>
+                        <input matInput [(ngModel)]="currentEmail">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                <button mat-raised-button color="primary" (click)="register()">
+                    Register
+                </button>
+
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="center stretch">
+
+                &nbsp;
+
+            </div>
+
+            <h3>Before starting work inform your ethereum wallet to receive payments.</h3>
+        </div>
+    </div>
+
+</div>

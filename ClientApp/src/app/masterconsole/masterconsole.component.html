@@ -1,0 +1,51 @@
+<div fxFlex *ngIf="data!=null" fxLayoutAlign="start start">
+    <table>
+        <thead>
+            <tr style="background-color: '#eaeaea';">
+                <td>
+                    Timestamp
+                </td>
+                <td style="border-left: 1px solid black;">
+                    Wallet
+                </td>
+                <td style="border-left: 1px solid black;">
+                    Result
+                </td>
+                <td style="border-left: 1px solid black;">
+                    FileHash
+                </td>
+                <td style="border-left: 1px solid black;">
+                    JobHash
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let completion of data; let i = index"
+                [ngStyle]="{'background-color': (i%2>0?('#f0f0f0'):('#ffffff'))}">
+                <td style="white-space: nowrap;">
+                    {{completion.ts}}
+                </td>
+                <td style="border-left: 1px solid gray;">
+                    {{completion.wallet}}
+                </td>
+                <td style="border-left: 1px solid gray;">
+                    {{completion.payload.split('|')[2]}}
+                </td>
+                <td style="border-left: 1px solid gray;">
+                    {{completion.payload.split('|')[1]}}
+                </td>
+                <td style="border-left: 1px solid gray;">
+                    {{completion.payload.split('|')[0]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<div *ngIf="data==null" fxFill fxLayout="column" fxLayoutAlign="center center">
+    <div>
+        <mat-spinner></mat-spinner>
+    </div>
+</div>
