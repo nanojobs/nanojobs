@@ -5,7 +5,7 @@ nanojobs allows the distribution of lots of annotation jobs (widely used in trai
 Try it.
 
 On the conventional Web 2.0:
-  * https://nanojobs.github.com
+  * https://nanojobs.github.io
   * https://cloudflare-ipfs.com/ipfs/QmeGctidnKsaftSb2fpVHoeWsTGeC1KeY73EhqV2xznXF3/
   * https://ipfs.io/ipfs/QmeGctidnKsaftSb2fpVHoeWsTGeC1KeY73EhqV2xznXF3/
   * https://gateway.pinata.cloud/ipfs/QmeGctidnKsaftSb2fpVHoeWsTGeC1KeY73EhqV2xznXF3/
