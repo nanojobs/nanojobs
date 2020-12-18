@@ -127,6 +127,7 @@ export class TaskerComponent implements OnInit {
           },
 
           onSubmitCompletion: function (ls, completion) {
+            try {
             var strJson = JSON.stringify(completion);
             msvc.updateCompletion(hashValue.toString(), hash, JSON.parse(strJson));
             {
@@ -134,7 +135,19 @@ export class TaskerComponent implements OnInit {
               document.getElementById('label-studio').innerHTML = "";
               _self.loadHash(hashValue).then((v) => { });
             }
+          } catch (err){}
 
+          },
+          onUpdateCompletion: function(ls, completion) {
+            try{
+            var strJson = JSON.stringify(completion);
+            msvc.updateCompletion(hashValue.toString(), hash, JSON.parse(strJson));
+            {
+              _self.showed = false;
+              document.getElementById('label-studio').innerHTML = "";
+              _self.loadHash(hashValue).then((v) => { });
+            }
+          }catch(erro){}
           }
         });
 

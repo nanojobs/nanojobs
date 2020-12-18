@@ -17,7 +17,7 @@
             <dashsimple fxFlex="25" fxFlex.lt-md="50" class="padding" [simplevalue]="data.total"
                 simpletitle="Total Completions" simpleicon="assignment" simplecolor="primary"></dashsimple>
 
-            <dashsimple fxFlex="25" fxFlex.lt-md="50" class="padding" [simplevalue]="data.validCompletions.length"
+            <dashsimple fxFlex="25" fxFlex.lt-md="50" class="padding" [simplevalue]="data.validCompletions?.length"
                 simpletitle="VALID Completions" simpleicon="assignment_turned_in" simplecolor="primary"></dashsimple>
 
             <dashsimple *ngFor="let c of data.countCompletions" fxFlex="25" fxFlex.lt-md="50" class="padding"

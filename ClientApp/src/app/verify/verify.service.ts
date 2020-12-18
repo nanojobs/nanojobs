@@ -34,6 +34,10 @@ export class VerifyService {
           var jobj = JSON.parse(reader.result as string);
           if (jobj && Object.keys(jobj).length > 0) {
             let vobj=jobj[Object.keys(jobj)[0]];
+            if (!vobj.createdBy && Object.keys(jobj).length > 1) vobj=jobj[Object.keys(jobj)[1]];
+            if (!vobj.createdBy && Object.keys(jobj).length > 2) vobj=jobj[Object.keys(jobj)[2]];
+            if (!vobj.createdBy && Object.keys(jobj).length > 3) vobj=jobj[Object.keys(jobj)[3]];
+
             let wallet='';
               let email='';
               if (vobj.createdBy){

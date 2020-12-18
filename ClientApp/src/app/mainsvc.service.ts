@@ -443,6 +443,12 @@ from https://developers.google.com/web/updates/2012/06/How-to-convert-ArrayBuffe
         });
       }
     });
+    if (cmsg==""){
+      try{
+      cmsg=window['finddeeper'](completion.root).value;
+      }catch(err){}
+      if (cmsg==null) cmsg='';
+    }
     return cmsg;
   }
   getCMsg(directoryHash, fileHash, completion) {
